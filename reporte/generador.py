@@ -1,4 +1,6 @@
 import pandas as pd
+import matplotlib
+matplotlib.use('Agg')
 
 data = [[45939, 21574, 2876, 1815, 1646,   89,  555],
         [60423, 29990, 4708, 2568, 2366, 1411,  733],
@@ -17,7 +19,6 @@ data = pd.DataFrame(
 )
 
 print(data)
-
-#Generando las figuras
+#Imprimiendo las gráficas
 for col in data.columns:
     fig = data.plot.bar(y=col).get_figure().savefig('figs/' + col + '.png')
